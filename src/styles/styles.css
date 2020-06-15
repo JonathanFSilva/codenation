@@ -3,7 +3,7 @@
 :root {
   --primary-color: #eaeaea;
   --secondary-color: #d29460;
-  --background: #1a1a1a;
+  --background: #2a2a2a;
   --background-darker: #181818;
 }
 
@@ -19,7 +19,7 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
   -webkit-font-smoothing: antialiased;
   color: var(--primary-color);
-  /* background-color: var(--background); */
+  background-color: var(--background);
 }
 
 a {

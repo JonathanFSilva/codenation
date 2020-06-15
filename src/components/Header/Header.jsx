@@ -7,18 +7,23 @@ import './Header.css';
 function Header() {
   return (
     <header className="header">
-      <Link to="/" className="header__link">
-        <span>FASHIONISTA</span>
-      </Link>
+      <div className="header__container">
+        <Link to="/" className="header__link">
+          <span>FASHIONISTA</span>
+        </Link>
 
-      <div>
-        <button className="header__button">
-          <RiSearchLine />
-        </button>
+        <div>
+          <button className="header__button">
+            <RiSearchLine />
+          </button>
 
-        <button className="header__button header__button--cart" data-count={2}>
-          <RiShoppingBag3Line />
-        </button>
+          <button
+            className="header__button header__button--cart"
+            data-count={2}
+          >
+            <RiShoppingBag3Line />
+          </button>
+        </div>
       </div>
     </header>
   );

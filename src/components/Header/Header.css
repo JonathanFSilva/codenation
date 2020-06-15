@@ -1,22 +1,22 @@
 .header {
+  position: sticky;
+  top: 0;
+  background-color: var(--background-darker);
+  z-index: 1;
+}
+
+.header__container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 2rem;
   height: 70px;
-  top: 0;
-  position: sticky;
-  background-color: var(--background-darker);
+  margin: 0 auto;
+  max-width: 1920px;
 }
 
 .header__link {
   font-size: 1.875rem;
-  color: var(--primary-color);
-  transition: color 0.3s ease;
-}
-
-.header__link:hover,
-.header__button:hover {
   color: var(--secondary-color);
 }
 
@@ -32,6 +32,10 @@
 
 .header__button + .header__button {
   margin-left: 1rem;
+}
+
+.header__button:hover {
+  color: var(--secondary-color);
 }
 
 .header__button.header__button--cart::after {
