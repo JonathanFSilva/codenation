@@ -1,0 +1,19 @@
+.cart-wrapper {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  /* flex-direction: column;
+  justify-content: space-between; */
+  height: 100%;
+}
+
+.cart__list {
+  padding: 0.5rem;
+  overflow-y: auto;
+}
+
+.cart__footer {
+  padding: 1rem 0.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+}

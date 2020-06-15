@@ -2,6 +2,8 @@
   margin: 0 auto;
   max-width: 1920px;
   padding: 2rem;
+  height: calc(100vh - 70px);
+  overflow: scroll;
 }
 
 @media screen and (max-width: 380px) {

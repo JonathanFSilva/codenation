@@ -1,19 +1,49 @@
 import produce from 'immer';
 
-const INITIAL_STATE = {
-  open: true,
+import { formatSlug } from '../../../helpers/slug';
+
+const CART_INITIAL_STATE = {
+  isOpen: true,
+  items: [],
 };
 
-export default function sidebar(state = INITIAL_STATE, action) {
-  return produce(state, draft => {
+export default function sidebar(state = CART_INITIAL_STATE, action) {
+  return produce(state, (draft) => {
     switch (action.type) {
-      case '@sidebar/HANDLE_TOGGLE': {
-        draft.open = action.payload.value;
+      case '@cart/OPEN_CART_DRAWER': {
+        draft.isOpen = true;
         break;
       }
 
-      case '@auth/SIGN_OUT': {
-        draft.open = INITIAL_STATE.open;
+      case '@cart/CLOSE_CART_DRAWER': {
+        draft.isOpen = false;
+        break;
+      }
+
+      case '@cart/ADD_CART_ITEM': {
+        draft.items = [...state.items, action.payload.data];
+        break;
+      }
+
+      case '@cart/UPDATE_ITEM_QUANTITY': {
+        const { items } = state;
+
+        const index = items.findIndex(
+          ({ name }) =>
+            formatSlug(name) === formatSlug(action.payload.data.name),
+        );
+
+        if (index >= 0) {
+          items[index].qtde = action.payload.data.qtde;
+          draft.items = [...items];
+        }
+        break;
+      }
+
+      case '@cart/REMOVE_CART_ITEM': {
+        draft.items = state.items.filter(
+          ({ name }) => formatSlug(name) !== formatSlug(action.payload.data),
+        );
         break;
       }
 

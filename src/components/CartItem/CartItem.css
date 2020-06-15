@@ -1,0 +1,76 @@
+.cart__item {
+  display: flex;
+  flex-direction: row;
+}
+
+.cart__item + .cart__item {
+  margin-top: 1rem;
+}
+
+.item__image {
+  max-width: 90px;
+}
+
+.item__details {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  padding: 0.5rem;
+  height: fit-content;
+  width: 100%;
+}
+
+.item__text {
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: var(--secondary-color);
+  margin-bottom: 0.5rem;
+}
+
+.item__text--small {
+  font-size: 0.875rem;
+}
+
+.item__quantity {
+  grid-column: span 2;
+  justify-self: flex-start;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantity__button {
+  font-size: 1.25rem;
+  font-weight: bold;
+  width: 40px;
+  height: 40px;
+  border: none;
+  color: var(--secondary-color);
+  background: transparent;
+  cursor: pointer;
+}
+
+.item__quantity > input {
+  padding: 0 0.5rem;
+  width: 40px;
+  height: 40px;
+  border: none;
+}
+
+.item__quantity > input[type='number']::-webkit-outer-spin-button,
+.item__quantity > input[type='number']::-webkit-inner-spin-button {
+  transform: rotate(90deg);
+  height: 80px;
+  opacity: 0;
+}
+
+.remove__button {
+  margin-top: 0.5rem;
+  justify-self: flex-start;
+  font-size: 0.875rem;
+  border: none;
+  color: var(--secondary-color);
+  background: transparent;
+  cursor: pointer;
+  text-decoration: underline;
+}
