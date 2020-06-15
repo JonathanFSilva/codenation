@@ -1,11 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+
+import { formatSlug } from '../../helpers/slug';
 
 import './Product.css';
 
 function Product({ image, name, regularPrice, price, onSale, discount }) {
   return (
-    <article
+    <Link
+      to={`product/${formatSlug(name)}`}
       className={`product ${!!onSale && 'product--on-sale'}`}
       data-discount={`-${discount}`}
     >
@@ -22,21 +26,24 @@ function Product({ image, name, regularPrice, price, onSale, discount }) {
           {price}
         </h4>
       </div>
-    </article>
+    </Link>
   );
 }
 
 Product.propTypes = {
-  image: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
+  image: PropTypes.string,
+  name: PropTypes.string,
   regularPrice: PropTypes.string,
-  price: PropTypes.string.isRequired,
+  price: PropTypes.string,
   onSale: PropTypes.bool,
   discount: PropTypes.string,
 };
 
 Product.defaultProps = {
+  image: '',
+  name: '',
   regularPrice: '',
+  price: '',
   onSale: false,
   discount: '',
 };

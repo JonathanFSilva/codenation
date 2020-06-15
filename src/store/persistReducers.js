@@ -6,7 +6,7 @@ export default (reducers) => {
     {
       key: 'fashionista',
       storage,
-      whitelist: ['cart'],
+      whitelist: ['cart', 'products'],
     },
     reducers,
   );
