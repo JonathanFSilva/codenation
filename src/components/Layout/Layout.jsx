@@ -5,17 +5,20 @@ import { useDispatch, useSelector } from 'react-redux';
 import Header from '../Header';
 import Drawer from '../Drawer';
 import CartList from '../CartList';
+import Search from '../Search';
 
 import routes from '../../routes';
 
 import { closeCartDrawer } from '../../store/modules/cart/actions';
+import { closeSearchDrawer } from '../../store/modules/search/actions';
 
 import './Layout.css';
 
 function Layout() {
   const dispatch = useDispatch();
 
-  const { isOpen } = useSelector((state) => state.cart);
+  const { isOpen: cartIsOpen } = useSelector((state) => state.cart);
+  const { isOpen: searchIsOpen } = useSelector((state) => state.search);
 
   return (
     <BrowserRouter>
@@ -30,11 +33,19 @@ function Layout() {
       </main>
 
       <Drawer
-        isOpen={isOpen}
+        isOpen={cartIsOpen}
         title="Carrinho"
         onClose={() => dispatch(closeCartDrawer())}
       >
         <CartList />
+      </Drawer>
+
+      <Drawer
+        isOpen={searchIsOpen}
+        title="Buscar Produtos"
+        onClose={() => dispatch(closeSearchDrawer())}
+      >
+        <Search />
       </Drawer>
     </BrowserRouter>
   );

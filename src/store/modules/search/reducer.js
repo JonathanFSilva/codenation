@@ -1,19 +1,19 @@
 import produce from 'immer';
 
-const INITIAL_STATE = {
-  open: true,
+const SEARCH_INITIAL_STATE = {
+  isOpen: true,
 };
 
-export default function sidebar(state = INITIAL_STATE, action) {
-  return produce(state, draft => {
+export default function search(state = SEARCH_INITIAL_STATE, action) {
+  return produce(state, (draft) => {
     switch (action.type) {
-      case '@sidebar/HANDLE_TOGGLE': {
-        draft.open = action.payload.value;
+      case '@search/OPEN_SEARCH_DRAWER': {
+        draft.isOpen = true;
         break;
       }
 
-      case '@auth/SIGN_OUT': {
-        draft.open = INITIAL_STATE.open;
+      case '@search/CLOSE_SEARCH_DRAWER': {
+        draft.isOpen = false;
         break;
       }
 

@@ -1,0 +1,14 @@
+.search__input {
+  height: 40px;
+  width: 100%;
+  padding: 0 0.5rem;
+  color: var(--primary-color);
+  border-radius: 3px;
+  border: 2px solid #3f3f3f;
+  background-color: rgba(38, 38, 38, 0.4);
+}
+
+.search__results {
+  margin-top: 0.5rem;
+  padding: 0 0.5rem;
+}

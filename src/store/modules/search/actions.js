@@ -1,6 +1,7 @@
-export function handleToggle(value) {
-  return {
-    type: '@sidebar/HANDLE_TOGGLE',
-    payload: { value },
-  };
+export function openSearchDrawer() {
+  return { type: '@search/OPEN_SEARCH_DRAWER' };
+}
+
+export function closeSearchDrawer() {
+  return { type: '@search/CLOSE_SEARCH_DRAWER' };
 }

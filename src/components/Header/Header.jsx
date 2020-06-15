@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RiSearchLine, RiShoppingBag3Line } from 'react-icons/ri';
 
 import { openCartDrawer } from '../../store/modules/cart/actions';
+import { openSearchDrawer } from '../../store/modules/search/actions';
 
 import './Header.css';
 
@@ -20,7 +21,10 @@ function Header() {
         </Link>
 
         <div>
-          <button className="header__button">
+          <button
+            className="header__button"
+            onClick={() => dispatch(openSearchDrawer())}
+          >
             <RiSearchLine />
           </button>
 

@@ -7,7 +7,7 @@ const CART_INITIAL_STATE = {
   items: [],
 };
 
-export default function sidebar(state = CART_INITIAL_STATE, action) {
+export default function cart(state = CART_INITIAL_STATE, action) {
   return produce(state, (draft) => {
     switch (action.type) {
       case '@cart/OPEN_CART_DRAWER': {
