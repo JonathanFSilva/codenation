@@ -3,7 +3,7 @@ import produce from 'immer';
 import { formatSlug } from '../../../helpers/slug';
 
 const CART_INITIAL_STATE = {
-  isOpen: true,
+  isOpen: false,
   items: [],
 };
 

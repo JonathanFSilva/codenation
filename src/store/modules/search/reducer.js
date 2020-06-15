@@ -1,7 +1,7 @@
 import produce from 'immer';
 
 const SEARCH_INITIAL_STATE = {
-  isOpen: true,
+  isOpen: false,
 };
 
 export default function search(state = SEARCH_INITIAL_STATE, action) {
